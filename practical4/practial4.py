@@ -8,6 +8,9 @@ Created on Tue Sep 17 15:17:30 2019
 import random
 import operator
 import matplotlib.pyplot
+import time
+
+start=time.clock()
 
 def distance_between(agents_row_a, agents_row_b):
     answer = (((agents_row_a[0] - agents_row_b[0])**2) + ((agents_row_a[1] - agents_row_b[1])**2))**0.5
@@ -53,11 +56,11 @@ for j in range(num_of_agents):
         distance.append (distance_between(agents[j], agents[i]))
     distance_all.append(distance)
 
+print(max(distance))
+print(min(distance))
 
+end=time.clock()
 
-
-
-
-
+print("time =" + str(end - start))
 
 
