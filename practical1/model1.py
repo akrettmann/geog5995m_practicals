@@ -9,8 +9,55 @@ import matplotlib.pyplot
 import operator
 import random
 
-y0=random.randint (0,99)
-x0=random.randint (0,99)
+agents = []
+
+number_of_agents = 2
+
+seed = 101
+random.seed(seed)
+
+for i in range (0, number_of_agents):
+    x = random.randint(0,99)
+    print("x",x)
+    y = random.randint(0,99)
+    print("y",y)
+    z = random.randint(0,99)
+    print("z",z)
+    agent = []
+    agent.append(x)
+    agent.append(y)
+    agent.append(z)
+    #agent = [x, y, z]
+    agents.append(agent)
+
+print(agents)
+
+
+
+
+
+'''
+<Code to understand loops and conditional if statements>
+for i in range(0,3):
+    seed = 100 * i
+    random.seed(seed)
+    y0=random.randint(0, 99)
+    x0=random.randint(0, 99)
+    print("Random seed", seed)
+    condition = (seed == 100)
+    condition1 = (seed > 100)
+    print("Is Random seed equal to 100?",condition)
+    if condition:
+        print("y0",y0)
+        print("x0",x0)
+    elif condition1:
+        print("Aha, this must be seed > 100!")
+    elif condition2:
+                
+    else:
+        print("Not telling you the values.")
+</Code to understand loops and conditional if statements>
+
 
 agents = []
 agents.append([y0,x0])
@@ -25,6 +72,11 @@ agents.append([y1,x1])
 agents[1][0]
 agents[1][1]
 print (agents)
+
+
+
+
+
 
 #y0=50 
 #x0=50 
@@ -117,3 +169,4 @@ matplotlib.pyplot.show()
 
 
 
+'''
