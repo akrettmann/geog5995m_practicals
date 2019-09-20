@@ -4,13 +4,10 @@ import matplotlib.pyplot
 import agentframework
 import csv
 
-#create function to calculate distance between each of the agents
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a.x - agents_row_b.x)**2) +
         ((agents_row_a.y - agents_row_b.y)**2))**0.5
 
-#create variable for the number of agents and iterations 
-#create an empty list for the agents
 num_of_agents = 10
 num_of_iterations = 10
 agents = []
@@ -24,8 +21,6 @@ seed = 102
 random.seed(seed)
 
 # Initialise environment
-#Create variable for environment to read file into using CSV reader 
-#(converts text into numbers)
 environment = []
 with open("../in.txt") as f:
     reader = csv.reader(f, delimiter=',')
@@ -36,11 +31,9 @@ with open("../in.txt") as f:
             #print(value)
             environment_row.append(int(value))
         environment.append(environment_row)
-#Determine number of columns and rows 
 nrows = len(environment)
 print("nrows", nrows)
 ncols = len(environment[0])
-#Create for loop to check if same number of columns as rows exist
 for row in range(0,nrows):
     ncols_row = len(environment[row])
     if ncols != ncols_row:
@@ -120,3 +113,4 @@ for agents_row_a in agents:
         distance = distance_between(agents_row_a, agents_row_b)
         
 '''
+print ("Hello World")
