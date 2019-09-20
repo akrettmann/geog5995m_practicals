@@ -7,6 +7,29 @@ import csv
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a.x - agents_row_b.x)**2) +
         ((agents_row_a.y - agents_row_b.y)**2))**0.5
+            
+            
+def share(neighbourhood) :
+    for i in range(num_of_agents):
+        agents[i].share(fdsafas)
+
+    for i in range(num_of_agents):
+        agents[i].canshare = 'true'
+
+
+def eat(max_amount_eaten):
+    for i in range(num_of_agents):
+        amount_eaten = random.randint(0, max_amount_eaten)
+        agents[i].eat(amount_eaten)
+                    
+def move(steps):
+    for j in range(steps):
+        for i in range(num_of_agents):
+            agents[i].move()
+            matplotlib.pyplot.scatter(agents[i].y,agents[i].x)
+
+
+def plot agents
 
 num_of_agents = 10
 num_of_iterations = 10
@@ -61,11 +84,16 @@ for i in range(num_of_agents):
     total_store += agents[i].store
 print("total_store before eating",total_store) 
 
+
+
 max_amount_eaten = 10
-for i in range(num_of_agents):
+eat(max_amount_eaten)
+
+#moved up to created function
+'''for i in range(num_of_agents):
     amount_eaten = random.randint(0, max_amount_eaten)
     agents[i].eat(amount_eaten)
-    
+'''    
 #agents.append(agentframework.Agent(agents, environment, 0, 0))
 #agents.append(agentframework.Agent(agents, environment, 3, 4))
 
@@ -88,18 +116,46 @@ print("total_store after eating",total_store)
 if (total_store + sumenv) != sumenv0:
     print("lost some")
 
+share(10)
+
+#moved up to create share function
+'''def share() :
 fdsafas = 10
 for i in range(num_of_agents):
     agents[i].share(fdsafas)
+
+for i in range(num_of_agents):
+    agents[i].canshare = 'true'
+'''    
     
 print(agents[0])
-        
+
+#print ("agents before shuffle", agents)
+print ("agents before shuffle")
+for i in range (num_of_agents):
+    print(agents[i])
+
+random.shuffle(agents)
+
+#print("shuffled", agents)
+print ("shuffled agents") 
+for i in range (num_of_agents):
+    print(agents[i])
+    
+  
+move(num_of_iterations) 
+
+for i in range (num_of_agents):  
+    matplotlib.pyplot.scatter(agents[i].y,agents[i].x)
+
+       
 #agents.append(agentframework.Agent(agents, environment, 0, 75))
 #agents.append(agentframework.Agent(agents, environment, 150, 0))
 #agents.append(agentframework.Agent(agents, environment, 299, 150))
 #agents.append(agentframework.Agent(agents, environment, 75, 299))
-'''
+
 # Move the agents.
+#moved up to create function
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
         agents[i].move()
@@ -112,5 +168,4 @@ for agents_row_a in agents:
     for agents_row_b in agents:
         distance = distance_between(agents_row_a, agents_row_b)
         
-'''
-print ("Hello World")
+
