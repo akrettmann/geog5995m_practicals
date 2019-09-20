@@ -72,13 +72,12 @@ class Agent():
             if i != self.name:
                 distance = self.distance_between(i)
                 if distance < neighbourhood:
-                    average = (self.store + self.agents[i].store) /2
-                    print(self)
-                    print(" sharing with agent",i,"my store", self.store, "their store", self.agents[i].store, "amount shared", average)
-                    self.store = average
-                    self.agents[i].store = average        
+                    if self.agents[i].canshare()
+                        average = (self.store + self.agents[i].store) /2
+                        print(self)
+                        print(" sharing with agent",i,"my store", self.store, "their store", self.agents[i].store, "amount shared", average)
+                        self.store = average
+                        self.agents[i].store = average        
+        self.canshare = 'false'
         
-        
-        
-            
-                
+print ("hello world")  
